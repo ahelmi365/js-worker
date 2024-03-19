@@ -1,26 +1,23 @@
 /* eslint-disable no-restricted-globals */
-
-// worker.js
 self.addEventListener("message", function (e) {
   // Receive message from main thread
   const interval = e.data.interval;
 
   // Function to call the API
-  const getTodos = async () => {
+  const getUsersData = async () => {
     console.log("Calling API...");
 
     const res = await fetch("https://jsonplaceholder.typicode.com/users");
-
     const usersData = await res.json();
     self.postMessage({ usersData });
   };
 
   // Call the API initially
-  getTodos();
+  getUsersData();
 
   // Set interval to call the API
   const apiInterval = setInterval(function () {
-    getTodos();
+    getUsersData();
   }, interval);
 
   // Terminate worker if needed
