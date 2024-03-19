@@ -15,6 +15,7 @@
 
 button:not(:disabled) {
   cursor: pointer;
+  color: white;
 }
 button:disabled {
   cursor: not-allowed;
@@ -22,7 +23,6 @@ button:disabled {
 .start-btn {
   background-color: #28a745;
   border-color: #28a745;
-  color: white;
 }
 .start-btn:hover {
   background-color: #218838;
@@ -31,7 +31,6 @@ button:disabled {
 .stop-btn {
   background-color: #dc3545;
   border-color: #dc3545;
-  color: white;
 }
 .stop-btn:hover {
   background-color: #c82333;
