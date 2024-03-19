@@ -31,13 +31,13 @@ export const appendUsersDataDocument = (usersDataElem, usersData) => {
             <p><span class="f-bold">Name</span>: ${user.name}</p>
         </div>
         <div class="user-card-email">
-            <p><span class="f-bold">Email</span>: ${user.email}</p>
+            <p><span class="f-bold">Email</span>: <a href="mailto:${user.email}"> ${user.email}</a></p>
         </div>
         <div class="user-card-phone">
             <p><span class="f-bold">Phone</span>: ${user.phone}</p>
         </div>
         <div class="user-card-website">
-            <p><span class="f-bold">Website</span>: ${user.website}</p>
+            <p><span class="f-bold">Website</span>:<a href="#"> ${user.website}</a></p>
         </div>
     </div>`;
   });
