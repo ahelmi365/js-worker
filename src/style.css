@@ -1,0 +1,39 @@
+.btn-container {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  width: 250px;
+  padding: 5px;
+  border-radius: 0.25rem;
+
+  border-width: 1px;
+  border-style: solid;
+}
+
+button:not(:disabled) {
+  cursor: pointer;
+}
+button:disabled {
+  cursor: not-allowed;
+}
+.start-btn {
+  background-color: #28a745;
+  border-color: #28a745;
+  color: white;
+}
+.start-btn:hover {
+  background-color: #218838;
+  border-color: #1e7e34;
+}
+.stop-btn {
+  background-color: #dc3545;
+  border-color: #dc3545;
+  color: white;
+}
+.stop-btn:hover {
+  background-color: #c82333;
+  border-color: #c82333;
+}
