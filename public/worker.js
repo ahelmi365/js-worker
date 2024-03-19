@@ -6,8 +6,7 @@ self.addEventListener("message", function (e) {
   const interval = e.data.interval;
 
   // Function to call the API
-  console.log({ interval });
-  const getToDos = async () => {
+  const getTodos = async () => {
     console.log("Calling API...");
 
     const res = await fetch("https://jsonplaceholder.typicode.com/todos");
@@ -19,11 +18,11 @@ self.addEventListener("message", function (e) {
   };
 
   // Call the API initially
-  getToDos();
+  getTodos();
 
   // Set interval to call the API
   const apiInterval = setInterval(function () {
-    getToDos();
+    getTodos();
   }, interval);
 
   // Terminate worker if needed
