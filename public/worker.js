@@ -9,12 +9,10 @@ self.addEventListener("message", function (e) {
   const getTodos = async () => {
     console.log("Calling API...");
 
-    const res = await fetch("https://jsonplaceholder.typicode.com/todos");
+    const res = await fetch("https://jsonplaceholder.typicode.com/users");
 
-    const todos = await res.json();
-
-    // console.log({ todos });
-    self.postMessage({ todos });
+    const usersData = await res.json();
+    self.postMessage({ usersData });
   };
 
   // Call the API initially
