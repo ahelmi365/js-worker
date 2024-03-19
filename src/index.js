@@ -1,11 +1,13 @@
 import {
   enableBtnElement,
   disableBtnElement,
-  addTodosList,
+  appendUsersDataDocument,
 } from "./utils/utils.js";
 
 const startWorkerBtn = document.getElementById("startWorker");
 const stopWorkerBtn = document.getElementById("stopWorker");
+const usersDataElem = document.getElementById("usersData");
+const workerDataContainerElem = document.getElementById("workerDataContainer");
 let apiWorker;
 
 // Cleanup function
@@ -15,6 +17,7 @@ const stopWorker = () => {
 
   enableBtnElement(startWorkerBtn, "start-btn");
   disableBtnElement(stopWorkerBtn, "stop-btn");
+  workerDataContainerElem.classList.add("d-none");
 };
 
 const startWorkder = () => {
@@ -26,15 +29,17 @@ const startWorkder = () => {
   }
   console.log({ apiWorker });
   // Send message to the worker with the interval
-  const interval = 5000; // 5 seconds
+  const interval = 5000000; // 5 seconds
   apiWorker.postMessage({ interval: interval });
 
   // Handle messages from the worker
   apiWorker.onmessage = function (event) {
     console.log("Message from worker: ", event.data);
     // Handle the response from the worker as needed
-    const todos = event?.data?.todos;
-    addTodosList(todos);
+    workerDataContainerElem.classList.remove("d-none");
+
+    const usersData = event?.data?.usersData;
+    appendUsersDataDocument(usersDataElem, usersData);
   };
 };
 
