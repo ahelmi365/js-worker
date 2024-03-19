@@ -98,3 +98,11 @@ p {
 .f-bold {
   font-weight: bold;
 }
+
+.visible-hide {
+  visibility: hidden;
+}
+
+p.loading {
+  margin: 0;
+}
