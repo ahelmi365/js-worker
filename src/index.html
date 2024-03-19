@@ -10,21 +10,24 @@
 
 <body>
     <div class="container">
-        <h1>Welcome to JavaScript Worker</h1>
-        <section class="btn-container">
-            <div>
-                <button class="btn start-btn" id="startWorker">Start Worker</button>
+        <section class="card">
 
-            </div>
-            <div>
-                <button class="btn disabled" disabled id="stopWorker">Stop Worker</button>
-            </div>
+            <h1 class="title">Welcome to JavaScript Worker</h1>
+            <section class="btn-container">
+                <div>
+                    <button class="btn start-btn" id="startWorker">Start Worker</button>
+
+                </div>
+                <div>
+                    <button class="btn disabled" disabled id="stopWorker">Stop Worker</button>
+                </div>
+            </section>
         </section>
-
-        <section>
-            <ul id="todosList"></ul>
+        <section class="card d-none" id="workerDataContainer">
+            <div class="users-data-container" id="usersData"></div>
         </section>
     </div>
+
 </body>
 
 <script src="./index.js" type="module"></script>
