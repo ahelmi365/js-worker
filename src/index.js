@@ -6,8 +6,9 @@ import {
 
 const startWorkerBtn = document.getElementById("startWorker");
 const stopWorkerBtn = document.getElementById("stopWorker");
-const usersDataElem = document.getElementById("usersData");
-const workerDataContainerElem = document.getElementById("workerDataContainer");
+const usersDataElm = document.getElementById("usersData");
+const loadingElm = document.getElementById("loading");
+const workerDataContainerElm = document.getElementById("workerDataContainer");
 let apiWorker;
 
 // Cleanup function
@@ -17,7 +18,7 @@ const stopWorker = () => {
 
   enableBtnElement(startWorkerBtn, "start-btn");
   disableBtnElement(stopWorkerBtn, "stop-btn");
-  workerDataContainerElem.classList.add("d-none");
+  workerDataContainerElm.classList.add("d-none");
 };
 
 const startWorkder = () => {
@@ -34,9 +35,14 @@ const startWorkder = () => {
   // Handle messages from the worker
   apiWorker.onmessage = function (event) {
     console.log("Message from worker: ", event.data);
-    workerDataContainerElem.classList.remove("d-none");
+    workerDataContainerElm.classList.remove("d-none");
     const usersData = event?.data?.usersData;
-    appendUsersDataDocument(usersDataElem, usersData);
+    appendUsersDataDocument(usersDataElm, usersData);
+    // Show/hide loading indicator based on API calls
+    loadingElm.classList.remove("visible-hide");
+    setTimeout(() => {
+      loadingElm.classList.add("visible-hide");
+    }, 300);
   };
 };
 
