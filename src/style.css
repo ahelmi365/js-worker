@@ -6,17 +6,24 @@ body {
 }
 .container {
   width: 80vw;
-  min-width: 600px;
+  /* min-width: 300px; */
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-
+  gap: 1rem;
+}
+.title {
+  margin: 0 0 2rem 0;
+  text-align: center;
+}
+.card {
+  width: 100%;
   padding: 1rem;
   border: 1px solid gray;
   border-radius: 0.5rem;
-  /* margin: 1rem 0 1rem 0; */
 }
+
 .btn-container {
   display: flex;
   gap: 1rem;
@@ -56,4 +63,38 @@ button:disabled {
 .stop-btn:hover {
   background-color: #c82333;
   border-color: #c82333;
+}
+.d-none {
+  display: none;
+}
+
+.users-data-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.user-card {
+  padding: 0.5rem;
+  border: 1px solid gray;
+  border-radius: 0.5rem;
+  flex-basis: 25%;
+}
+
+@media screen and (max-width: 768px) {
+  .user-card {
+    flex-basis: 40%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .user-card {
+    flex-basis: 100%;
+  }
+}
+p {
+  font-size: 0.9rem;
+}
+.f-bold {
+  font-weight: bold;
 }
