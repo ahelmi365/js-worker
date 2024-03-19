@@ -27,24 +27,20 @@ const startWorkder = () => {
     disableBtnElement(startWorkerBtn, "start-btn");
     enableBtnElement(stopWorkerBtn, "stop-btn");
   }
-  console.log({ apiWorker });
   // Send message to the worker with the interval
-  const interval = 5000000; // 5 seconds
+  const interval = 5000; // 5 seconds
   apiWorker.postMessage({ interval: interval });
 
   // Handle messages from the worker
   apiWorker.onmessage = function (event) {
     console.log("Message from worker: ", event.data);
-    // Handle the response from the worker as needed
     workerDataContainerElem.classList.remove("d-none");
-
     const usersData = event?.data?.usersData;
     appendUsersDataDocument(usersDataElem, usersData);
   };
 };
 
 // start worker
-
 startWorkerBtn.addEventListener("click", () => {
   startWorkder();
 });
