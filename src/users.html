@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <section class="card">
+
+            <h1 class="title">Welcome to JavaScript Worker</h1>
+
+            <section class="btn-container">
+                <div>
+                    <button class="btn start-btn" id="startWorker">Start Worker</button>
+                </div>
+                <div>
+                    <button class="btn disabled" disabled id="stopWorker">Stop Worker</button>
+                </div>
+            </section>
+            <p class="loading visible-hide" id="loading">Loading...</p>
+        </section>
+        <section class="card d-none" id="workerDataContainer">
+            <div class="users-data-container" id="usersData"></div>
+        </section>
+    </div>
+
+</body>
+
+<script src="./scripts/users.js" type="module"></script>
+
+</html>
